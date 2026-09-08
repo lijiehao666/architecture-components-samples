@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RxJava 基础示例（Kotlin）</string>
+    <string name="update_user">更新用户名</string>
+</resources>
