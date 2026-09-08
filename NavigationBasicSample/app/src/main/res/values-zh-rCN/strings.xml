@@ -1,0 +1,40 @@
+<!--
+  ~ Copyright (C) 2018 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">Navigation 示例</string>
+
+    <string name="hello_blank_fragment">空白 Fragment 问候</string>
+    <string name="game_over">游戏结束</string>
+    <string name="try_again">再试一次？</string>
+    <string name="question_1">马拉松有多少公里？</string>
+    <string name="start">开始</string>
+    <string name="select_an_avatar">选择头像</string>
+    <string name="name">姓名</string>
+    <string name="email">邮箱</string>
+    <string name="password">密码</string>
+    <string name="sign_up">注册</string>
+    <string name="leaderboards">排行榜</string>
+    <string name="next_match">下一场</string>
+    <string name="trivia">问答！</string>
+    <string name="play">开始游戏</string>
+    <string name="profile_image">头像</string>
+    <string name="user_points">10,000 分</string>
+    <string name="rank">排名</string>
+    <string name="wins">胜场</string>
+    <string name="losses">负场</string>
+    <string name="congratulations">恭喜！</string>
+</resources>

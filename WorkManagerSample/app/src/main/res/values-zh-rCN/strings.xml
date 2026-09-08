@@ -1,0 +1,44 @@
+<!--
+  ~ Copyright 2018 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">WorkManager 示例</string>
+    <string name="select_stock_image">选择示例图片</string>
+    <string name="select_image">选择图片</string>
+    <!-- filters -->
+    <string name="filters_title">选择滤镜</string>
+    <string name="filter_watercolor">水彩</string>
+    <string name="filter_grayscale">灰度</string>
+    <string name="filter_blur">模糊</string>
+    <!-- destinations -->
+    <string name="destinations_title">保存位置</string>
+    <string name="destination_save">保存图片</string>
+    <string name="destination_upload">上传到 Imgur</string>
+    <!-- actions -->
+    <string name="go">开始</string>
+    <string name="cancel">取消</string>
+    <string name="output">输出</string>
+    <!-- content descriptions -->
+    <string name="description_image">将要滤镜处理并上传的图片。</string>
+    <!-- messages -->
+    <string name="set_permissions_in_settings">
+        请前往 设置 -> 应用和通知 -> WorkManager 示例 -> 应用权限，并授予存储权限。
+    </string>
+    <string name="credits">
+        <![CDATA[示例图片来自 <a href="https://www.flickr.com/photos/romainguy">Romain Guy</a>。
+        CC2 许可协议。]]>
+    </string>
+</resources>

@@ -1,56 +1,54 @@
-Android Architecture Components samples
+Android Architecture Components 示例
 ===================================
 
-A collection of samples using the [Architecture Components](https://developer.android.com/arch):
+[English](README.en.md)
+
+一组使用 [Architecture Components](https://developer.android.com/arch) 的示例：
 
 - [Room](https://developer.android.com/topic/libraries/architecture/room)
 - [Lifecycle-aware components](https://developer.android.com/topic/libraries/architecture/lifecycle)
 - [ViewModels](https://developer.android.com/topic/libraries/architecture/viewmodel)
 - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
-- [Paging](https://developer.android.com/topic/libraries/architecture/paging/)
-- [Navigation](https://developer.android.com/topic/libraries/architecture/navigation/)
-- [ViewBinding](https://developer.android.com/topic/libraries/view-binding)
-- [WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager/)
+    - [Paging](https://developer.android.com/topic/libraries/architecture/paging/)
+    - [Navigation](https://developer.android.com/topic/libraries/architecture/navigation/)
+    - [ViewBinding](https://developer.android.com/topic/libraries/view-binding)
+    - [WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager/)
 
-### Samples
+### 示例
 
-* **[BasicSample](https://github.com/googlesamples/android-architecture-components/blob/master/BasicSample)** - Shows how to persist data using a SQLite database and Room. Also uses ViewModels and LiveData.
+* **[BasicSample](BasicSample)** - 演示如何使用 SQLite 数据库和 Room 持久化数据，同时使用 ViewModels 和 LiveData。
 
-* **[PersistenceContentProviderSample](https://github.com/googlesamples/android-architecture-components/blob/master/PersistenceContentProviderSample)** - Shows how to expose data via a Content Provider using Room.
+* **[PersistenceContentProviderSample](PersistenceContentProviderSample)** - 演示如何使用 Room 通过 Content Provider 暴露数据。
 
-* **[GithubBrowserSample](https://github.com/googlesamples/android-architecture-components/blob/master/GithubBrowserSample)** - An **advanced**  sample that uses the Architecture components, Dagger and the Github API, in Kotlin.
+* **[GithubBrowserSample](GithubBrowserSample)** - 一个**进阶**示例，使用 Architecture Components、Dagger 和 Github API，以 Kotlin 编写。
 
-* **[BasicRxJavaSample](https://github.com/googlesamples/android-architecture-components/blob/master/BasicRxJavaSample)** - Shows how to use Room with RxJava 2. Also uses ViewModels.
+* **[BasicRxJavaSample](BasicRxJavaSample)** - 演示如何将 Room 与 RxJava 2 一起使用，同时使用 ViewModels。
 
-* **[PersistenceMigrationsSample](https://github.com/googlesamples/android-architecture-components/blob/master/PersistenceMigrationsSample)** - Shows how to implement migrations in Room.
+* **[PersistenceMigrationsSample](PersistenceMigrationsSample)** - 演示如何在 Room 中实现数据库迁移。
 
-* **[BasicRxJavaKotlinSample](https://github.com/googlesamples/android-architecture-components/blob/master/BasicRxJavaSampleKotlin)** - Shows
-how to use ViewModels and Room together with RxJava, in Kotlin.
+* **[BasicRxJavaKotlinSample](BasicRxJavaSampleKotlin)** - 演示如何在 Kotlin 中将 ViewModels 和 Room 与 RxJava 一起使用。
 
- * **[PagingSample](https://github.com/googlesamples/android-architecture-components/tree/master/PagingSample)** - Shows
-  how to use the Paging library with Room, in Kotlin.
+ * **[PagingSample](PagingSample)** - 演示如何在 Kotlin 中将 Paging 库与 Room 一起使用。
 
- * **[PagingNetworkSample](https://github.com/googlesamples/android-architecture-components/tree/master/PagingWithNetworkSample)** - Shows
-  how to use the Paging library with a backend API via Retrofit, in Kotlin.
+ * **[PagingNetworkSample](PagingWithNetworkSample)** - 演示如何在 Kotlin 中通过 Retrofit 将 Paging 库与后端 API 一起使用。
 
-* **[NavigationBasicSample](https://github.com/googlesamples/android-architecture-components/tree/master/NavigationBasicSample)** - Shows
-  how to use Navigation to perform navigation and deep linking in Kotlin.
+* **[NavigationBasicSample](NavigationBasicSample)** - 演示如何在 Kotlin 中使用 Navigation 进行页面跳转和深层链接。
 
-* **[NavigationAdvancedSample](https://github.com/googlesamples/android-architecture-components/tree/master/NavigationAdvancedSample)** - Shows
-  how to handle multiple back stacks with Navigation and a BottomNavigationView.
+* **[NavigationAdvancedSample](NavigationAdvancedSample)** - 演示如何使用 Navigation 和 BottomNavigationView 处理多个返回栈。
 
-* **[LiveDataSample](https://github.com/googlesamples/android-architecture-components/tree/master/LiveDataSample)** - Shows
-  how to integrate Kotlin coroutines with Architecture Components such as `LiveData`.
+* **[LiveDataSample](LiveDataSample)** - 演示如何将 Kotlin 协程与 `LiveData` 等 Architecture Components 集成。
 
-* **[ViewBindingSample](https://github.com/googlesamples/android-architecture-components/tree/master/ViewBindingSample)** - Shows how to use view bindings in an activity and in fragments.
+* **[ViewBindingSample](ViewBindingSample)** - 演示如何在 Activity 和 Fragment 中使用 View Binding。
 
-* **[WorkManagerSample](https://github.com/googlesamples/android-architecture-components/tree/master/WorkManagerSample)** - Shows
-  how to use WorkManager to do background work, in Kotlin.
+* **[WorkManagerSample](WorkManagerSample)** - 演示如何在 Kotlin 中使用 WorkManager 处理后台任务。
 
+### 中文本地化
 
-### Reporting Issues
+各示例应用已提供简体中文（`values-zh-rCN`）字符串资源。在系统语言为简体中文的设备上，界面会自动显示中文；其他语言环境仍使用默认英文文案。
 
-You can report an [Issue](https://github.com/googlesamples/android-architecture-components/issues) on the samples using this repository. If you find an issue with the Architecture Components, report it using the [Architecture Components Issue Tracker](https://issuetracker.google.com/issues/new?component=197448&template=878802)
+### 反馈问题
+
+你可以在本仓库提交 [Issue](https://github.com/googlesamples/android-architecture-components/issues)。如果发现问题出在 Architecture Components 本身，请使用 [Architecture Components Issue Tracker](https://issuetracker.google.com/issues/new?component=197448&template=878802) 反馈。
 
 License
 -------

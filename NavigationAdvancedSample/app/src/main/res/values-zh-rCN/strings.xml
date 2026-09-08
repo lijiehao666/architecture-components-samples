@@ -1,0 +1,42 @@
+<!--
+  ~ Copyright 2019, The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">Navigation 示例</string>
+    <string name="select_an_avatar">选择头像</string>
+    <string name="name">姓名</string>
+    <string name="email">邮箱</string>
+    <string name="password">密码</string>
+    <string name="sign_up">注册</string>
+    <string name="profile_image">头像</string>
+    <string name="user_points">10,000 分</string>
+    <string name="rank">排名</string>
+    <string name="wins">胜场</string>
+    <string name="losses">负场</string>
+    <string name="about">关于</string>
+    <string name="welcome">欢迎！</string>
+    <string name="about_description">本示例演示如何使用底部导航栏进行导航。三个不同界面的状态和返回栈都会被保留。</string>
+    <string name="done">完成</string>
+    <string name="title_about">关于</string>
+    <string name="title_home">首页</string>
+    <string name="title_register">注册</string>
+    <string name="title_registered">已注册</string>
+    <string name="title_list">排行榜</string>
+    <string name="title_detail">个人资料</string>
+    <string name="cd_home">首页</string>
+    <string name="cd_list">列表</string>
+    <string name="cd_form">表单</string>
+</resources>

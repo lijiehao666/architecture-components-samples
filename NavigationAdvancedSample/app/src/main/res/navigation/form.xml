@@ -34,6 +34,6 @@
     <fragment
         android:id="@+id/registered"
         android:name="com.example.android.navigationadvancedsample.formscreen.Registered"
-        android:label="Registered"
+        android:label="@string/title_registered"
         tools:layout="@layout/fragment_registered"/>
 </navigation>
