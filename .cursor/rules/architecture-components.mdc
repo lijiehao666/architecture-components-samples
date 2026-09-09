@@ -1,0 +1,31 @@
+---
+description: ViewModel, LiveData, and repository layering used by the samples
+globs: "**/*.{kt,java}"
+alwaysApply: false
+---
+
+# UI, ViewModel, data
+
+Keep Android views out of ViewModels. UI observes data; ViewModels expose `LiveData` / `Flow` and call into a repository or data source.
+
+```kotlin
+// ❌ BAD — ViewModel holds a View and loads data itself
+class SearchViewModel : ViewModel() {
+    lateinit var recycler: RecyclerView
+    fun search(q: String) = api.search(q)
+}
+
+// ✅ GOOD — immutable LiveData, query via switchMap, repository does I/O
+class SearchViewModel(private val repo: RepoRepository) : ViewModel() {
+    private val _query = MutableLiveData<String>()
+    val results: LiveData<Resource<List<Repo>>> = _query.switchMap { q ->
+        if (q.isBlank()) AbsentLiveData.create() else repo.search(q)
+    }
+    fun setQuery(input: String) { _query.value = input.trim() }
+}
+```
+
+- Use `Transformations.switchMap` / `LiveData.switchMap` when one LiveData (query, id) should drive another.
+- Use `SavedStateHandle` when the query must survive process death (`BasicSample`).
+- Launch coroutines with `viewModelScope`; use `liveData { }` builders as in `LiveDataSample`.
+- `GithubBrowserSample` wraps async results in `Resource` (`SUCCESS` / `ERROR` / `LOADING`) and loads via `NetworkBoundResource` (DB first, then network). Do not bypass that pattern in that sample.

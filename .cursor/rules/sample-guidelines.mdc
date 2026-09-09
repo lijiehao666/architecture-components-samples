@@ -1,0 +1,33 @@
+---
+description: How to work in this multi-sample Architecture Components repository
+alwaysApply: true
+---
+
+# Sample isolation
+
+This repo is a collection of **independent** Android Architecture Components samples. Each top-level directory (`BasicSample`, `GithubBrowserSample`, `PagingSample`, etc.) is its own Gradle project.
+
+- Change only the sample that is in scope. Do not "improve" other samples in the same PR.
+- Match that sample's language and stack. Java samples stay Java; Kotlin samples stay Kotlin. Do not introduce Compose, Hilt, or Navigation into a sample that does not already use them.
+- Treat samples as teaching code for a specific API (Room, LiveData, Paging, WorkManager, Navigation, ViewBinding). Prefer the same patterns already used in that sample over newer alternatives.
+
+# File headers and style
+
+New source files need the Apache 2.0 Android Open Source Project copyright header used by neighboring files.
+
+```java
+// ❌ BAD — missing header, mixed style
+class Foo { }
+
+// ✅ GOOD — match the sample's existing header year format and code style
+/*
+ * Copyright (C) 2017 The Android Open Source Project
+ * ... Apache 2.0 license block ...
+ */
+```
+
+Follow the existing style in the target sample ([Android Code Style Guide](https://source.android.com/source/code-style.html)). Java samples often use `m` prefixes; Kotlin samples do not.
+
+# Issues
+
+This repo tracks **sample** bugs. Architecture Components library bugs belong on the [issuetracker](https://issuetracker.google.com/issues/new?component=197448&template=878802).

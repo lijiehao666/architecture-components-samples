@@ -1,0 +1,35 @@
+---
+description: Room database, DAO, and schema conventions used by the samples
+globs: "**/*.{kt,java}"
+alwaysApply: false
+---
+
+# Room
+
+DAOs are the persistence API. Queries the UI observes should return `LiveData`, `Flow`, or `PagingSource` — not a blocking list on the main thread.
+
+```kotlin
+// ❌ BAD — blocking query, no conflict strategy
+@Dao
+interface CheeseDao {
+    @Query("SELECT * FROM Cheese")
+    fun all(): List<Cheese>
+    @Insert
+    fun insert(c: Cheese)
+}
+
+// ✅ GOOD — observable / paged query; explicit insert conflict policy
+@Dao
+interface CheeseDao {
+    @Query("SELECT * FROM Cheese ORDER BY name COLLATE NOCASE ASC")
+    fun allCheesesByName(): PagingSource<Int, Cheese>
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert(cheeses: List<Cheese>)
+}
+```
+
+- Keep entities, DAOs, and `@Database` classes in the sample's `db` / `data` package.
+- Export schemas with `room.schemaLocation` pointing at `$projectDir/schemas` when the sample already does so.
+- Instrument DAO tests with an in-memory database (`Room.inMemoryDatabaseBuilder`), not the on-disk app DB.
+- Bump `@Database` `version` and add a `Migration` when changing schema (`PersistenceMigrationsSample` is the reference).
+- Java Room samples use `annotationProcessor deps.room.compiler`; Kotlin samples use `kapt`.
