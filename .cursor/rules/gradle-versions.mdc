@@ -1,0 +1,28 @@
+---
+description: Shared dependency versions and Gradle conventions for samples
+globs: "**/*.{gradle,kts}"
+alwaysApply: false
+---
+
+# Gradle and versions
+
+Each sample is a standalone Gradle project. Shared coordinates live in that sample's `versions.gradle` (and the repo-root `versions.gradle`). Do not hardcode Maven versions in module `build.gradle` files.
+
+```gradle
+// ❌ BAD
+dependencies {
+    implementation "androidx.room:room-runtime:2.3.0-alpha01"
+}
+
+// ✅ GOOD
+dependencies {
+    implementation deps.room.runtime
+    annotationProcessor deps.room.compiler
+}
+```
+
+- Root `build.gradle` of a sample must `apply from: 'versions.gradle'` (or the existing relative path).
+- SDK levels come from `build_versions` (`compile_sdk`, `min_sdk`, `target_sdk`, `build_tools`).
+- Prefer updating `versions.gradle` / `update_versions.sh` when bumping a library used by several samples.
+- Keep `minifyEnabled false` and existing `lintOptions` unless the task is specifically about release shrinking or lint.
+- Java modules use `annotationProcessor` for Room/Lifecycle; Kotlin modules use `kapt`. Do not mix the two in one module.

@@ -1,0 +1,38 @@
+---
+description: Unit and instrumentation test patterns used across the samples
+globs: "**/{test,androidTest,test-common}/**/*.{kt,java}"
+alwaysApply: false
+---
+
+# Testing Architecture Components
+
+ViewModels and repositories are unit-tested with fakes or Mockito. Do not hit the network or a real Room file in local unit tests.
+
+```kotlin
+// ❌ BAD — no InstantTaskExecutorRule; real repository; LiveData never observed
+class SearchViewModelTest {
+    @Test fun basic() {
+        SearchViewModel(RepoRepository()).setQuery("foo")
+    }
+}
+
+// ✅ GOOD — sync executor, mock collaborator, observeForever, verify interactions
+@RunWith(JUnit4::class)
+class SearchViewModelTest {
+    @Rule @JvmField val instantExecutor = InstantTaskExecutorRule()
+    private val repository = mock(RepoRepository::class.java)
+
+    @Test fun basic() {
+        val viewModel = SearchViewModel(repository)
+        viewModel.results.observeForever(mock())
+        viewModel.setQuery("foo")
+        verify(repository).search("foo")
+    }
+}
+```
+
+- Use `InstantTaskExecutorRule` whenever tests read `LiveData`.
+- Coroutine LiveData tests use a `MainCoroutineRule` / test dispatcher and helpers like `getOrAwaitValue` (`LiveDataSample`).
+- `GithubBrowserSample`: mock ViewModels in Espresso fragment tests; use MockWebServer for Retrofit; in-memory Room for DAO tests on device.
+- Prefer fakes over mocks for data sources you own (`FakeDataSource` in `LiveDataSample`).
+- New production behavior needs tests in the same sample; run that sample's Gradle test tasks, not an invented repo-wide suite unless using `run_all_tests.sh`.
